@@ -11,6 +11,11 @@
         /* padding: 0px; */
         margin: 0px;
     }
+
+    html{
+      width: 100%;
+    }
+
     #recipe_results{
         /* border: 1px solid black; */
         display: grid;
@@ -51,6 +56,7 @@
       width: 250px;
       height: 25px;
       border-radius: 10px;
+      margin-top: -30px;
       
     }
     #topbox{
@@ -71,14 +77,77 @@
     }
     h1{
         text-align: center;
+        color: purple;
+        margin-left: 430px;
+        margin-top: 20px;
+    }
+    h2{
+        text-align: center;
+    }
+    #namelogo>img{
+        width: 100px;
+        margin-top: 20px;
+    }
+    #namelogo{
+        display: flex;
+        margin: auto;
+        padding-left: 50px;
+        margin-bottom: -30px;
+    }
+
+    /* for phone */
+    @media all and (min-width: 80px) and (max-width:450px){
+
+        #recipe_results{
+        /* border: 1px solid black; */
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-rows: repeat(2, auto); */
+        /* gap: 20px 40px; */
+        text-align: center;
+        }
+
+        img{
+        width: 180px;
+    }
+    #mainbox>div>div{
+        padding-bottom: 20px;
+        padding-top: 5px;
+
+    }
+
+    #mainbox{
+        padding: 10px;
+    }
+    #namelogo>img{
+        width: 50px;
+        height: 50px;
+        margin-top: 5px;
+    }
+    h1{
+    margin-left: 20px;
+    margin-top: 10px;
+    }
+    input{
+      margin-top: 30px;
+      
+    }
+
+
     }
 </style>
 
 <body>
-    <div id="topbox"><input type="text" id="recipe_query" oninput="debounceFn(main, 1000)" placeholder="Search Recipe"/>
+    <div id="topbox">
+        <div id="namelogo">
+        <img src="https://lh3.googleusercontent.com/XXypF-CSV_R4bniF8pZk8O-PzrVhRF5i_PvX5PuHtF-DgLldwXfAqnIP4QVfL6bNJzc">
+        <h1>Recipe Finder</h1>
+        
+        </div>
+        
+        <input type="text" id="recipe_query" oninput="debounceFn(main, 1000)" placeholder="Search Recipe"/>
     </div>
     <div id="mainbox">
-        <h1>Search Dish Name To Get The Recipe! </h1>
+        <h2>Search Dish Name To Get The Recipe! </h1>
         <!-- Show this when tha page is emptry -->
         <div id="recipe_results">
            
